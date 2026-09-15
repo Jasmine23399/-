@@ -1,0 +1,5 @@
+// 页面入口：导航、提示与整体渲染
+function navigate(page){state.page=page;state.search='';state.filter='全部';render();window.scrollTo(0,0)}
+function toast(msg){const el=document.querySelector('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),2800)}
+function render(){document.querySelector('#nav').innerHTML=navItems.map(([key,icon,label])=>`<button data-page="${key}" class="${state.page===key?'active':''}"><span class="nav-icon">${icon}</span><span>${label}</span></button>`).join('');document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>navigate(b.dataset.page));const label=navItems.find(x=>x[0]===state.page)?.[2];document.querySelector('#crumb').textContent=label;document.querySelector('#page-title').textContent=({overview:'设备管理总览',assets:'设备台账',transfers:'转移审批',disposals:'报废清理',count:'智能清点',advice:'生命周期建议',reports:'统计报表'})[state.page];document.querySelector('#content').innerHTML=({overview,assets,transfers,disposals,count,advice,reports})[state.page]();bind()}
+render();

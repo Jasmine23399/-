@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>智管设备 · 智能设备管理系统</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">◈</span><div><strong>智管设备</strong><small>智能设备管理系统</small></div></div>
+      <div class="side-label">工作台</div>
+      <nav id="nav"></nav>
+      <div class="sidebar-bottom"><div class="avatar">彭</div><div><strong>设备管理员</strong><small>高校实验室 · 演示账号</small></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="breadcrumb">工作台 / <span id="crumb">总览</span></span><h1 id="page-title">设备管理总览</h1></div><div class="top-actions"><span class="demo-badge">前端演示版</span><button class="icon-btn" title="通知" id="notice-btn">♧</button></div></header>
+      <div id="content"></div>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <div id="modal-root"></div>
+  <script src="src/data.js"></script>
+  <script src="src/views.js"></script>
+  <script src="src/actions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
